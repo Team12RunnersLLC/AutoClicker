@@ -5,10 +5,11 @@ import threading
 import keyboard
 import pyautogui  # For mouse clicking
 import tkinter as tk
-from tkinter import ttk
+from tkinter import ttk, messagebox
 
 
 __version__ = "1.1.0"
+__build__ = "2024.11.14.1" # format: yyyy.mm.dd.patch-number
 __author__ = "Team12Runners LLC & Blinky"
 
 
@@ -22,12 +23,12 @@ class AutoPresserGUI(tk.Tk):
         self.focus_force()  # Force-focus window
 
         # Version Label
-        self.version_label = ttk.Label(self, text=f"AutoClicker Version: {__version__}")
+        self.version_label = ttk.Label(self, text=f"AutoClicker Version: {__version__}\nBuild: {__build__}")
         self.version_label.pack(pady=10)
 
         # Author Label
-        self.version_label = ttk.Label(self, text=f"Developed by: {__author__}")
-        self.version_label.pack(pady=5)
+        self.author_label = ttk.Label(self, text=f"Developed by: {__author__}")
+        self.author_label.pack(pady=5)
 
         # Click Frequency Input
         self.click_frequency_label = ttk.Label(self, text="Click Frequency (0 For Default Frequency):")
